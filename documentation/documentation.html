@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>MTDb - Ultimate Movie&TV Database</title>
+ 	<meta name="description" content="Thank you for purchasing MTDb! This app is built on top of laravel framework which means it is 100% OOP oriented, follows MVC pattern and best coding practises. Great, why do I care you ask? Well, because of all the above, besides this documentation you have a massive amount of online documentation for laravel which you almost always can apply to this app. So if you want to do some advanced modification/extension to MTDb, or just want to understand better how it works under the hood, take a look at Laravel Docs, Laracasts, or just google for dozens of other tutorial/help sites on laravel.">
+	<meta name="author" content="r4mark">
+	<meta name="copyright" content="r4mark">
+	<meta name="date" content="2013-12-26T00:00:00+01:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/bootstrap.min.js" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+
+    <body>
+        <div id="docs-row" class="clearfix">
+            <h1 class="col-sm-4">Documentation</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <ul class="col-sm-3 sidebar list-unstyled">
+                    <li class="header"><i class="fa fa-gears"></i><span>Installation</span></li>
+
+                    <li class="active"><a href="#create-db">Create a new database</a></li>
+                    <li><a href="#upload-files">Upload the files</a></li>
+                    <li><a href="#install-origins">Install MTDb</a></li>
+                    <li><a href="#update-origins">Updating to new versions</a></li>
+
+                    <li class="header"><i class="fa fa-tachometer"></i>Dashboard</li>
+
+                    <li><a href="#dash-pagi">Titles, Actors, News Pages</a></li>
+                    <li><a href="#dash-media">Media</a></li>
+                    <li><a href="#dash-slider">Slider</a></li>
+                    <li><a href="#dash-scrape">Scraping</a></li>
+                    <li><a href="#dash-settings">Settings</a></li>
+                    <li><a href="#dash-ads">Ads</a></li>
+
+                    <li class="header"><i class="fa fa-globe"></i>Translations</li>
+                    <li><a href="#translations">Translating MTDb</a></li>
+
+                    <li class="header"><i class="fa fa-pencil"></i>Creating/Editing</li>
+
+                    <li><a href="#create_titles">Titles</a></li>
+                    <li><a href="#create-news">News Items</a></li>
+                    <li><a href="#create-actors">Actors</a></li>
+
+                    <li class="header"><i class="fa fa-users"></i>Users</li>
+
+                    <li><a href="#social">Social Login</a></li>
+                    <li><a href="#act-via-email">Activation via email</a></li>
+
+                    <li class='header'><i class="fa fa-life-ring"></i>Support</li>
+                    <li><a href="#support">Send a support request</a></li>
+                 </ul>
+
+                <div class="col-sm-9" id="docs-content">
+                    <section id="create-db">
+                        <h2>Creating a new database</h2>
+                        <p>First thing you want to do before installing <strong>MTDb</strong> is to create a new database on your mysql server. If you already know how to do this/or have already created one just skip to the next step.</p> 
+                        <p>Your host will most likely be running <strong>phpMyAdmin</strong> as mysql manager, if that's the case here's a step by step guide (if not the proccess will be very similar on other managers).</p>
+                        <p>Login to your control panel, find and click phpMyAdmin link: <img src="assets/images/db_ex_2.png"> Click on the database tab in the top menu, enter any name you like and click create.<img src="assets/images/db_ex_3.png"></p>
+                    </section>
+                   
+                    <section id="upload-files">
+                        <h2>Uploading Files</h2>
+                        <p>After creating a database, unzpip the file you donwloaded and upload the <strong>contents</strong> of <strong>mtdb</strong> folder to your server root (usually called www or html or something similar), shared hosting providers usually have a web based file manager, but you should use something like <a href="https://filezilla-project.org/">Filezilla</a> to do the upload as the web based managers cause various problems fairly often.<br><br>
+                        <strong>IMPORTANT! Make sure that .htaccess file got copied properly from the download to main mtdb folder on your server.</strong>
+                        </p>
+                    </section>
+
+                    <section id="install-origins">
+                        <h2>Installing MTDb</h2>
+                        <p>After you created a database and uploaded the files, simply open up your site in the browser and follow on-screen instructions to complete the installation.</p>
+                        <img src="assets/images/install_ex_1.png">
+                    </section>
+
+                    <section id="update-origins">
+                        <h2>Updating MTDb to new versions</h2>
+                        
+                        <ul>
+                        	<li>1. Extract the .zip file you downloaded from CodeCanyon.</li>
+                        	<li>2. If you have made any translations, open up <strong>app/lang/en/main.php</strong> and <strong>app/lang/en/dash.php</strong> and copy the language lines marked with latest version to language files on your server, and then delete the <strong>app/lang folder</strong> from the download folder. If you didn't make any translations you can skip this step.</li>
+                        	<li>3. Upload and overwrite the rest of the files same way you did when you installed MTDb.</li>
+                            <li>4. Visit <strong>http://yoururl.com/update</strong> to finish updating. (might not always need to do this step)</li>
+                        </ul>
+                    </section>
+
+                    <section id="dash-pagi" class="new-section">
+                        <h2>Titles, Actors and News Pages</h2>
+                        <p>These sections will provide you with a paginated table of that resource, here you can</p>
+                        <ul>
+                            <li>Click <strong>create new</strong> at the top to go to the resources creation page.</li>
+                            <li>Click <strong>update</strong> at the top to update the resource from available external data providers.</li>
+                            <li>You can filter the resource by name or other parameters by entering/select filter at the top bar.</li>
+                            <li>You can edit/delete the resource by clicking the trash can and wrench icons next to it.</li>
+                        </ul>
+                        <img src="assets/images/dash_ex_1.png">
+                    </section>
+                    <section id="dash-media">
+                        <h2>Media Page</h2>
+                        <p>In the media page you can filter the images much like in other resource pages you can also:</p>
+                        <ul>
+                            <li><strong>Upload new images</strong> by droping the files in the page directly from your desktop or clicking the <strong>select files</strong> button.</li>
+                            <li>You can get the <strong>fully qualified image link</strong> by clicking on the blue <i class="fa fa-external-link"></i> icon.</li>
+                            <li>permanently delete a file by clicking on a red <i class="fa fa-trash-o"></i> icon in the right corner of the image.</li>
+                        </ul>
+                        <img src="assets/images/dash_ex_2.png">
+                    </section>
+                    <section id="dash-slider">
+                        <h2>Slider Page</h2>
+                        <p>In this page you can add/delete/modify the slides of main homepage slider. You can create slides completely from scratch or you can enter a titles name in <strong>populate slide data</strong> field and then click on one of the titles of movies/series that appear, this will populate current slide with the available data from your selected title in database.</p>
+                        <img src="assets/images/dash_ex_4.png">
+                    </section>
+                     <section id="dash-scrape">
+                        <h2>Actions Page</h2>
+                        <p>Here you can fetch titles from IMDb or themoviedb in bulk. The first 2 panels will fetch only titles, while the third one will fetch all the information about titles like images, reviews etc. Simply enter how much titles you want to fetch and click <strong>Go</strong>. Also note that some hosts enforce request time or/and other limits so you might need to fetch titles in smaller batches.</p>
+                        <img src="assets/images/dash_ex_11.png">
+                    </section>
+                    <section id="dash-settings">
+                        <h2>Settings Page</h2>
+                        <p>Here you can change various settings of the site, all of them are explained on the page so you shouldn't have any problems understanding what they do, simply change what you want and click <strong>Submit</strong> at the bottom of the page.</p>
+                        <img src="assets/images/dash_ex_12.png">
+                    </section>
+                    <section id="dash-ads">
+                        <h2>Ads Page</h2>
+                        <p>Here you can enter your google or other services ads codes and google analytics code directly without needing to open up any files, Simply enter the codes (full ones with the script tags) in slot you want the ad to appear and click <strong>Submit</strong> at the bottom, note that some hosting providers don't allow saving of any javascript to database so if you see any errors that is most likely the cause.
+                        <img src="assets/images/dash_ex_13.png">
+                    </section>
+
+
+                    <section id="translations" class="new-section">
+                    	<h2>Translating MTDb to your language</h2>
+                    	<p>To translate MTDb to your language simply follow the steps below:</p>
+                    	<ul>
+                    		<li>Open app/lang folder</li>
+                    		<li>Duplicate <strong>en</strong> folder and rename it to your desired language code, for example <strong>ru</strong></li>
+                    		<li>Open up any of the files in your newly created <strong>ru</strong> folder and enter your translations on the left side.</li>
+                    	</ul>
+                    	<img src="assets/images/trans_ex_1.png">
+                    </section>
+
+
+                    <section id="create_titles" class="new-section">
+                        <h2>Creating/Editing Titles Manually</h2>
+                        <p>To create a new title go to dashboard titles page and click <strong>Create New</strong> at the top, to edit an existing one click the blue pencil icon next to the title you want to edit in the same page.</p>
+                        <p>Once you are in the title create/edit page fill in the main title details in the first panel (You can get the image path for poster and background by clicking on <strong>Upload or select an image</strong> and then clicking the blue <i class="fa fa-link-external"> icon next to the image you want.</i></p>
+                        <p>You can attach images to title by clicking <strong>Upload or select an image</strong> and simply selecting the image you want, you can detach an image by clicking on the red x next to an image in <strong>images tab</strong></p>
+                        <p>You can attach actors to a title by searching for them by name and then clicking on the result you want.</p>
+                        <p>You can also attach directors and writer by entering theyr full name and clicking add on the right. After you filled out everything simply click <strong>save</strong>.</p>
+                        <img src="assets/images/create_ex_1.png">
+                    </section>
+                     <section id="create-news">
+                        <h2>Creating/Editing News Manully</h2>
+                        <p>The proccess of creating/editing news is very similar to titles, with few differences:</p>
+                        <ul>
+                            <li>You have a fully featured WYSIWYG editor for news body.</li>
+                            <li>You can add images to the body by clicking <strong>upload or select an image</strong> and then clicking the image you want, it will be inserted at your cursor position in text editor.</li>
+                        </ul>
+                         <img src="assets/images/create_ex_2.png">
+                    </section>
+                    <section id="create-actors">
+                        <h2>Creating/Editing Actors Manully</h2>
+                        <p>Creating actors is pretty much the same as titles, except you can manage their filmography in the filmpgraphy tab.</p>
+                         <img src="assets/images/create_ex_3.png">
+                    </section>
+                     <section id="social" class="new-section">
+                        <h2>Social Login</h2>
+                        <p>To make social login work you will need to register for an application on <strong>Google, Twitter and Facebook</strong>, once you register for the application and receive your credentials you can enter them in <strong>app/config/.env</strong> file.</p>
+                        <img src="assets/images/social_ex_0.png">
+
+                        <p>You can resgister for facebook app <a href="https://developers.facebook.com/">Here</a> by clicking on <strong>App > Create new app</strong> at the top. Once you create the app you can find your id and secred in your app dashboard, you will also need to enter your site url in <strong>Settings > site url field</strong></p>
+                        <img src="assets/images/social_ex_1.png">
+
+                        <p>You can register for twitter app <a href="https://dev.twitter.com/apps/new">Here</a>, after you register you will need to enter your site url in <strong>Website</strong> and <strong>Callback Url</strong> fields in your app settings, you can find your key and secret in the api keys tab.</p>
+                        <img src="assets/images/social_ex_2.png">
+
+                        <p>You can register for google app <a href="https://cloud.google.com/console/project">Here</a> by clicking on <strong>Create new project</strong>, after creating new project go to credentials tab and in the redirect uri field enter <strong>http://yoursiteurl/social/auth?hauth.done=Google</strong>, you might also need to enable <strong>Google plus</strong> and <strong>contacts</strong> APIs.</p>
+                        <img src="assets/images/social_ex_3.png">
+                    </section>
+                     <section id="act-via-email">
+                        <h2>Require Users to activate their account via email</h2>
+                        <p>Be default users will not need to confirm their account via email before being able to login, if you want to enable this functionality, you can do so in <strong>Dashboard > Settings > Require users to activate account via email</strong> field. </p>
+                        <img src="assets/images/users_ex_1.png">
+                        <p>To make this work you will also need to configure your mail server so <strong>MTDb</strong> can send out emails, to do this open up <strong>app/config/.env</strong> file with a text editor and fill in the required information. You can use your gmail, yahoo etc account or you can use the one provided to you by your hosting probider.</p>
+                        <img src="assets/images/users_ex_2.png">
+                    </section>
+                    <section id="support">
+                        <h2>Support</h2>
+                        <p>If you have any questions or issues regarding MTDb please use the <a target="_blank" href="http://codecanyon.net/item/mtdb-ultimate-movietv-database/6447206/support">support form on CodeCanyon</a> to contact us! Note that comments on the MTDb page will be redirected to the support tab!</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
